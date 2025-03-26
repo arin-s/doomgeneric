@@ -22,6 +22,9 @@
 #include "m_config.h"
 #include "m_misc.h"
 
+// Dump heap
+int key_dumpheap = KEYP_DIVIDE;
+
 //
 // Keyboard controls
 //

@@ -146,6 +146,15 @@ void D_ProcessEvents (void)
 	
     while ((ev = D_PopEvent()) != NULL)
     {
+        // If forward slash is pressed, dump the heap
+        if (ev->type == ev_keydown && ev->data1 == key_dumpheap)
+        {
+            printf("Dumping heap to dump.txt\n");
+            FILE* file = fopen("dump.txt", "w");
+            Z_FileDumpHeap(file);
+            fclose(file);
+            continue;
+        }        
 	if (M_Responder (ev))
 	    continue;               // menu ate the event
 	G_Responder (ev);

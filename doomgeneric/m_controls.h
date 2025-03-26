@@ -16,6 +16,9 @@
 
 #ifndef __M_CONTROLS_H__
 #define __M_CONTROLS_H__
+
+// Dump heap
+extern int key_dumpheap;
  
 extern int key_right;
 extern int key_left;
